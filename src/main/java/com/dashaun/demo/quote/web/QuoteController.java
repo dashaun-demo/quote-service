@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QuoteController {
 
-    @GetMapping("/api/quotes")
+    @GetMapping({"/api/quotes", "/api/quotes/"})
     public String quotes() {
         return "[{\"id\":\"Q-2026-0117\",\"customerId\":\"C-1001\","
                 + "\"monthlyPremium\":184.50,\"status\":\"APPROVED\"}]";
     }
 
-    @GetMapping("/api/quotes/{id}")
+    @GetMapping({"/api/quotes/{id}", "/api/quotes/{id}/"})
     public String quote(@PathVariable String id) {
         return "{\"id\":\"" + id + "\",\"customerId\":\"C-1001\","
                 + "\"product\":\"AUTO-PLUS\",\"monthlyPremium\":184.50,"
